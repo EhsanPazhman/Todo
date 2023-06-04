@@ -30,3 +30,16 @@ function addFolder($folderName)
     return $stmt->rowCount();
 }
 /* پایان تابع */
+
+// تابع حذف یک پوشه از دیتابیس
+function deleteFolder($folderId){
+    global $conn;
+    $sql = "DELETE FROM folders WHERE id = $folderId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->rowCount();
+}
+if (isset($_GET['deleteFolder'])){
+    deleteFolder($_GET['deleteFolder']);
+}
+/* پایان تابع */
