@@ -1,0 +1,70 @@
+.page
+  .pageHeader
+    .title Dashboard
+    .userPanel
+      i.fa.fa-chevron-down
+      span.username John Doe 
+      img(src='https://s3.amazonaws.com/uifaces/faces/twitter/kolage/73.jpg',width=40,height=40)
+  
+  .main
+    .nav
+      .searchbox
+        div
+          i.fa.fa-search
+          input(type="search", placeholder="Search")      
+
+      .menu
+        .title Navigation
+        ul
+          li 
+            i.fa.fa-home
+            | Home
+          li
+            i.fa.fa-signal
+            | Activity
+          li.active 
+            i.fa.fa-tasks
+            | Manage Tasks
+          li 
+            i.fa.fa-envelope
+            | Messages
+
+    .view
+      .viewHeader
+        .title Manage Tasks
+        .functions
+          .button.active Add New Task
+          .button Completed
+          .button.inverz
+            i.fa.fa-trash-o
+      .content
+        .list
+          .title Today
+          ul
+            li.checked
+              i.fa.fa-check-square-o
+              span Update team page
+              .info
+                .button.green In progress
+                span Complete by 25/04/2014
+
+            li
+              i.fa.fa-square-o
+              span Design a new logo
+              .info
+                .button Pending
+                span Complete by 10/04/2014
+
+            li
+              i.fa.fa-square-o
+              span Find a front end developer
+              .info
+
+
+        .list
+          .title Tomorrow
+          ul
+            li
+              i.fa.fa-square-o
+              span Find front end developer
+              .info

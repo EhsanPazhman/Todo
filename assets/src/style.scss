@@ -1,0 +1,318 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Dosis:300|Lato:300,400,600,700|Roboto+Condensed:300,700|Open+Sans+Condensed:300,600|Open+Sans:400,300,600,700|Maven+Pro:400,700);
+
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+html {
+  background-image: url(http://www.ultraimg.com/images/2UeGfhZ.jpg); 
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-smoothing: antialiased;
+}
+
+.page {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  
+  background-color: rgba(255, 255, 255, 0.7);
+  
+  @include border-radius(4px);
+  
+  @include box-shadow(0 0 10px 0 rgba(0,0,0, 0.4));
+}
+
+$colorBlue: rgba(84,185, 205, 1.0);
+
+.pageHeader {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+
+  background-color: $colorBlue;
+  color: White;
+
+  @include box-sizing(border-box);
+  padding: 5px 20px;
+  vertical-align: middle;
+
+  .title {
+    width: 40%;
+    float: left;
+    line-height: 40px;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  .userPanel {
+    width: 40%;
+    float: right;
+
+    i {
+      float: right;
+      line-height: 40px;        
+      padding-right: 10px;
+    }
+
+    .username {
+      float: right;
+      line-height: 40px;      
+      padding: 0px 20px;
+      font-weight: 600;
+      font-size: 1.0em;
+    }
+
+    img {
+      float: right;
+      @include border-radius(5px);
+    }
+
+  }
+}
+  
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  clear: both;
+  background-color: white;
+
+  .nav {
+    width: 200px;
+    height: 100%;
+    float: left;
+    
+    background-color: rgba(227,234,235, 0.8);
+    
+    .searchbox {
+      width: 170px;
+      height: 30px;
+      line-height: 30px;
+      margin: 15px;
+      background-color: White;
+      @include border-radius(4px);
+      
+      i {
+        display: inline-block;
+        color: #bbb;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 16px;
+      }
+      
+      input {
+        display: inlin-block;
+        width: 120px;
+        background-color: White;
+        color: Black;
+        font-family: "Lato";
+        border: 0px;
+      }
+    }
+    
+    .menu {
+      width: 100%;
+      margin: 15px;
+      color: #555;
+      
+      .title {
+        font-weight: 700;
+        font-size: 1.0em;
+        text-transform: uppercase;
+      }
+      
+      ul {
+        padding-left: 0px;
+        
+        li {
+          cursor: pointer;
+          list-style: none;
+          margin: 5px 0px;
+          padding: 5px 0px;
+          font-weight: 600;
+          margin-right: 30px;
+          padding-left: 10px;
+          
+          @include border-radius(4px);
+          transition: 0.25s all;
+          
+          &.active {
+            color: #79BC46;
+          }
+          
+          &:hover {
+            background-color: #999;            
+          }
+          
+          i {
+            font-size: 1.4em;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  
+  .view {
+    position: relative;
+    margin-left: 200px;
+    
+    .viewHeader {
+      width: 100%;
+      height: 70px;
+      line-height: 70px;
+      padding: 20px 20px;
+      @include box-sizing(border-box);
+      
+      border-bottom: 1px solid #E0E0E0;
+      
+      .title {
+        float: left;
+        font-size: 1.4em;
+        font-weight: 400;
+        padding: 0px;
+        color: #AAA;
+        margin-top: -18px;
+      }
+      
+      .functions {
+        float: right;
+        
+        .button {
+          float: right;
+          height: 30px;
+          line-height: 30px;
+          background-color: #AAA;
+          @include border-radius(4px);
+          margin: 0px 5px;
+          padding: 0px 20px;
+          
+          cursor: pointer;
+          color: White;
+          font-weight: 700;
+          
+          &.active {
+            background-color: $colorBlue;
+          }
+          
+          &.inverz {
+            background-color: inherit;
+            border: 1px solid #AAA;
+            width: 10px;
+            color: #AAA;
+            font-size: 1.3em;
+            padding-left: 10px;
+            padding-right: 16px;
+          }
+        }
+        
+        
+      }
+    }
+    
+    .content {
+      position: absolute;
+      left: 0px;
+      top: 70px;
+      right: 0px;
+      bottom: 0px;
+      padding: 10px;
+      
+      .list {
+        
+        .title {
+          width: 100%;
+          padding: 10px;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: $colorBlue;
+          
+        }
+        
+        ul {
+          width: 100%;
+          padding-left: 10px;
+          color: #777;
+          
+          li {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            list-style: none;
+            
+            &.checked {
+              background-color: #F0F4F5;
+            }
+            
+            border-top: 1px solid #AAA;
+            &:last-child {
+              border-bottom: 1px solid #AAA;
+            }
+            
+            i {
+              float: left;
+              width: 30px;
+              height: 50px;
+              line-height: 50px;
+              margin-left: 10px;
+              font-size: 1.3em;
+            }
+            
+            span {
+              float: left;
+              font-weight: 600;
+            }
+            
+            .info {
+              float: right;
+              
+              span {
+                font-weight: 300;
+              }
+              
+              .button {
+                float: right;
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                background-color: #AAA;
+                @include border-radius(4px);
+                margin: 10px 10px;
+                text-align: center;
+
+                cursor: pointer;
+                color: White;
+                font-weight: 700;
+                
+                &.green {
+                  background-color: #85C157;  
+                }
+              }
+              
+            }
+            
+          }
+        }
+        
+      } // .list
+    } // .content
+  } // .view
+  
+} // .main
+
+
+.clear {
+  clear: both;
+}
+
+
