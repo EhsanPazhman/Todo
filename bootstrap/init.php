@@ -17,3 +17,4 @@ try {
 }
 
 include BASE_PATH . "libs/libs-categories.php";
+include BASE_PATH . "libs/libs-folders.php";

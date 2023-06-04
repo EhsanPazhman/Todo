@@ -1,7 +1,8 @@
+<?php include "../bootstrap/init.php"; ?>
 <?php include "header.php"; ?>
 <!-- partial:index.partial.html -->
     <div class="main">
-    <?php include "nav.php"; ?>
+    <?php include "sidebar.php"; ?>
         <div class="view">
             <div class="viewHeader">
                 <div class="title">
@@ -13,18 +14,27 @@
                 <div class="list">
                     <div class="title">همه پوشه ها</div>
                     <ul class="folderList">
+                        <!-- شرط بررسی موجودیت پوشه -->
+                        <?php if (sizeof($folders)): ?>
+                        <?php foreach ($folders as $folder): ?>
                             <li>
-                                <a href="#">
-                                <i class="fa fa-folder"></i><span>نام فولدر</span></a>
+                                <a href="<?= siteUrl('/views/single-folder-tasks-page.php') ?>?folderId=<?= $folder->id ?>">
+                                <i class="fa fa-folder"></i><span><?= $folder->name ?></span></a>
                         <div class="info">
-                            <a href="">
-                                <div class="button danger" ">حذف</div></a>
-                            <a href="#">
+                            <a href="?deleteFolder=<?= $folder->id ?>">
+                                <div class="button danger" onclick="return confirm
+                         ('مطمئن هستید که میخواهید <?= $folder->name ?> حذف کنید؟');">حذف</div></a>
+                            <a href="<?= siteUrl('views/edit-folderPage.php') ?>?folderId=<?= $folder->id ?>">
                             <div class="button green">ویرایش</div>
                             </a>
-                            <span class="span">تاریخ ایجاد </span>
+                            <span class="span">تاریخ ایجاد <?= $folder->created_at ?></span>
                         </div>
+                            <?php endforeach; ?>
                             </li>
+                        <?php else: ?>
+                            <li>پوشهَ وجود ندارد!</li>
+                        <?php endif; ?>
+                        <!-- پایان شرط -->
                     </ul>
                 </div>
             </div>
