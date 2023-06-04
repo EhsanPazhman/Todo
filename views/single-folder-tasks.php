@@ -1,6 +1,8 @@
+<?php include "../bootstrap/init.php"; ?>
 <?php include "header.php"; ?>
 <!-- partial:index.partial.html -->
 <div class="main">
+    <?php include "nav.php"; ?>
     <div class="view">
         <div class="viewHeader">
             <div class="title">

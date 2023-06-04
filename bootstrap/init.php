@@ -3,6 +3,7 @@
 session_start();
 include "constants.php";
 include BASE_PATH . "bootstrap/config.php";
+include BASE_PATH . "libs/helpers.php";
 
 /** کد اتصال به دیتابیس **/
 try {
@@ -14,3 +15,5 @@ try {
 } catch(PDOException $e) {
     diePage('Connection failed: ') . $e->getMessage();
 }
+
+include BASE_PATH . "libs/libs-categories.php";

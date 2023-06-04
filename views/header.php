@@ -2,8 +2,8 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title> SITE_TITLE</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title><?= SITE_TITLE ?></title>
+    <link rel="stylesheet" href="<?= assets('css/style.css') ?>">
 
 </head>
 <body>
