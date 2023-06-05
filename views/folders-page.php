@@ -25,7 +25,7 @@
                                         <div class="button danger" onclick="return confirm
                          ('مطمئن هستید که میخواهید <?= $folder->name ?> حذف کنید؟');">حذف</div>
                                     </a>
-                                    <a href="<?= siteUrl('views/edit-folderPage.php') ?>?folderId=<?= $folder->id ?>">
+                                    <a href="<?= siteUrl('views/edit-folder.php') ?>?folderId=<?= $folder->id ?>">
                                         <div class="button green">ویرایش</div>
                                     </a>
                                     <span class="span">تاریخ ایجاد <?= verta($folder->created_at)->format('Y.m.d') ?></span>

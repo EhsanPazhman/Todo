@@ -19,6 +19,16 @@ function getFolders()
 $folders = getFolders();
 /* پایان تابع */
 
+// تابع گرفتن اطلاعات یک پوشه با آیدی آن
+function getFolder($folderId){
+    global $conn;
+    $sql = "SELECT * FROM `folders` WHERE id = $folderId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
+/* پایان تابع */
+
 // تابع اضافه نمودن پوشه در دیتابیس
 function addFolder($folderName)
 {
@@ -27,6 +37,16 @@ function addFolder($folderName)
     $sql = "INSERT INTO folders (name, user_id) VALUES (:folderName, :userId)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':folderName' => $folderName, ':userId' => $userId]);
+    return $stmt->rowCount();
+}
+/* پایان تابع */
+
+// تابع آپدیت یک پوشه با آیدی آن
+function updateFolder($folderId,$folderName){
+    global $conn;
+    $sql = "UPDATE `folders` SET `name` = '$folderName' WHERE id = $folderId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
     return $stmt->rowCount();
 }
 /* پایان تابع */

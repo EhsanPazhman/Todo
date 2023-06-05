@@ -21,6 +21,25 @@
                 }
             });
         });
+        $('#editFolderBtn').click(function (e) {
+            var folder = $('#editFolderInput');
+            $.ajax({
+                url: "<?= siteUrl('proccess/ajaxHandler.php') ?>",
+                method: "POST",
+                data: {
+                    action: "updateFolder", folderId: <?= $_GET['folderId'] ?? 0 ?>, folderName: folder.val()
+                },
+                success: function (response) {
+                    if (response == ''){
+                        alert('ویرایش با موفقیت انجام شد');
+                        location.reload();
+                    }else {
+                        alert(response);
+                    }
+                }
+            });
+        });
+        $('#editFolderInput').focus();
         $('#addFolderInput').focus();
     });
 </script>

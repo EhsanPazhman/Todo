@@ -20,6 +20,13 @@ switch ($_POST['action']) {
         }
         addFolder($_POST['folderName']);
         break;
+    case 'updateFolder':
+        $folderId = $_POST['folderId'];
+        $folderName = $_POST['folderName'];
+        updateFolder($folderId, $folderName);
+        break;
+
+
     default:
         diePage('اکشن نامعتبر!');
 }
