@@ -21,19 +21,41 @@
                 }
             });
         });
-        $('#editFolderBtn').click(function (e) {
+        $('#editFolderBtn').click(function(e) {
             var folder = $('#editFolderInput');
             $.ajax({
                 url: "<?= siteUrl('proccess/ajaxHandler.php') ?>",
                 method: "POST",
                 data: {
-                    action: "updateFolder", folderId: <?= $_GET['folderId'] ?? 0 ?>, folderName: folder.val()
+                    action: "updateFolder",
+                    folderId: <?= $_GET['folderId'] ?? 0 ?>,
+                    folderName: folder.val()
                 },
-                success: function (response) {
-                    if (response == ''){
+                success: function(response) {
+                    if (response == '') {
                         alert('ویرایش با موفقیت انجام شد');
                         location.reload();
-                    }else {
+                    } else {
+                        alert(response);
+                    }
+                }
+            });
+        });
+        $('#addTaskBtn').click(function(e) {
+            var input = $('input#newTaskInput');
+            $.ajax({
+                url: "<?= siteUrl('proccess/ajaxHandler.php') ?>",
+                method: "POST",
+                data: {
+                    action: "addTask",
+                    folderId: <?= $_GET['folderId'] ?? 0 ?>,
+                    taskTitle: input.val()
+                },
+                success: function(response) {
+                    if (response == '') {
+                        $('<span>' + input.val() + '</span>').appendTo('ul.taskList');
+                        location.reload();
+                    } else {
                         alert(response);
                     }
                 }

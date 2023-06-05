@@ -18,7 +18,7 @@
                     <?php if (sizeof($folders)) : ?>
                         <?php foreach ($folders as $folder) : ?>
                             <li>
-                                <a href="<?= siteUrl('/views/single-folder-tasks-page.php') ?>?folderId=<?= $folder->id ?>">
+                                <a href="<?= siteUrl('views/single-folder-tasks.php') ?>?folderId=<?= $folder->id ?>">
                                     <i class="fa fa-folder"></i><span><?= $folder->name ?></span></a>
                                 <div class="info">
                                     <a href="?deleteFolder=<?= $folder->id ?>">

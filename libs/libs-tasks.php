@@ -21,3 +21,14 @@ function getTasks()
 // قرار دادن اطلاعات تابع گرفتن تسک ها داخل متغییر برای استفاده در حلقه foreac برای نمایش اطلاعات در صفحه
 $tasks = getTasks();
 /* پایان تابع */
+
+/* تابع افزودن یک تسک */
+function addTask($taskTitle,$folderId){
+    global $conn;
+    $userId = getCurrentUserId();
+    $sql = "INSERT INTO tasks (title, user_id , folder_id) VALUES (:taskTitle, :userId, :folder_id)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([':taskTitle' =>$taskTitle, ':userId' =>$userId , ':folder_id' =>$folderId]);
+    return $stmt->rowCount();
+}
+/* پایان تابع */
