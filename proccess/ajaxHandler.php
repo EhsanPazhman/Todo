@@ -38,6 +38,11 @@ switch ($_POST['action']) {
         }
         addTask($taskTitle, $folderId);
         break;
+    case 'updateTask':
+        $taskId = $_POST['taskId'];
+        $taskTitle = $_POST['taskTitle'];
+        updateTask($taskId, $taskTitle);
+        break;
     default:
         diePage('اکشن نامعتبر!');
 }

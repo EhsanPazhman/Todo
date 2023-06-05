@@ -18,7 +18,7 @@
                                     <a href="?deleteTask=<?= $task->id ?>">
                                         <div class="button danger" onclick='return confirm("مطمئن هستید که میخواهید تسک <?= $task->title ?> حذف کنید؟");'>حذف</div>
                                     </a>
-                                    <a href="<?= siteUrl('views/edit-taskPage.php') ?>?taskId=<?= $task->id ?> ">
+                                    <a href="<?= siteUrl('views/edit-task.php') ?>?taskId=<?= $task->id ?> ">
                                         <div class="button green">ویرایش</div>
                                     </a>
                                     <span>تاریخ ایجاد <?= verta($task->created_at)->format('Y.m.d') ?></span>

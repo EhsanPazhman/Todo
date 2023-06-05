@@ -1,7 +1,7 @@
 <?php
 
 
-/* تابع گرفتن تمامی تسک ها و تسک های یک پوشه که آیدی آن ارسال شده از دیتابیس*/
+/* تابع گرفتن تمامی تسک ها و تسک های یک پوشه که آیدی آن ارسال شده از دیتابیس */
 function getTasks()
 {
     global $conn;
@@ -18,8 +18,18 @@ function getTasks()
     $records = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $records;
 }
-// قرار دادن اطلاعات تابع گرفتن تسک ها داخل متغییر برای استفاده در حلقه foreac برای نمایش اطلاعات در صفحه
+/* قرار دادن اطلاعات تابع گرفتن تسک ها داخل متغییر برای استفاده در حلقه foreac برای نمایش اطلاعات در صفحه */
 $tasks = getTasks();
+/* پایان تابع */
+
+/* تابع گرفتن اطلاعات یک تسک با آیدی آن */
+function getTask($taskId){
+    global $conn;
+    $sql = "SELECT * FROM `tasks` WHERE id = $taskId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
 /* پایان تابع */
 
 /* تابع افزودن یک تسک */
@@ -29,6 +39,16 @@ function addTask($taskTitle,$folderId){
     $sql = "INSERT INTO tasks (title, user_id , folder_id) VALUES (:taskTitle, :userId, :folder_id)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':taskTitle' =>$taskTitle, ':userId' =>$userId , ':folder_id' =>$folderId]);
+    return $stmt->rowCount();
+}
+/* پایان تابع */
+
+/* تابع آپدیت یک تسک با آیدی آن */
+function updateTask($taskId,$taskTitle){
+    global $conn;
+    $sql = "UPDATE `tasks` SET `title` = '$taskTitle' WHERE id = $taskId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
     return $stmt->rowCount();
 }
 /* پایان تابع */

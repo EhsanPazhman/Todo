@@ -41,6 +41,7 @@
                 }
             });
         });
+
         $('#addTaskBtn').click(function(e) {
             var input = $('input#newTaskInput');
             $.ajax({
@@ -61,6 +62,29 @@
                 }
             });
         });
+
+        $('#editTaskBtn').click(function(e) {
+            var task = $('input#editTaskInput');
+            $.ajax({
+                url: "<?= siteUrl('proccess/ajaxHandler.php') ?>",
+                method: "POST",
+                data: {
+                    action: "updateTask",
+                    taskId: <?= $_GET['taskId'] ?? 0 ?>,
+                    taskTitle: task.val()
+                },
+                success: function(response) {
+                    if (response == '') {
+                        alert('ویرایش با موفقیت انجام شد');
+                        location.reload();
+                    } else {
+                        alert(response);
+                    }
+                }
+            });
+        });
+
+
         $('#editFolderInput').focus();
         $('#addFolderInput').focus();
     });
