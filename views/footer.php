@@ -99,9 +99,26 @@
             });
         });
 
+        $('input#search').keyup(function() {
+            const input = $(this);
+            const searchResult = $('.search-results');
+            searchResult.html('در حال جستجو......');
+            $.ajax({
+                url: "<?= siteUrl('proccess/search.php') ?>",
+                method: "POST",
+                data: {
+                    keyword: input.val()
+                },
+                success: function(response) {
+                    searchResult.slideDown().html(response);
+                }
+            });
+        });
 
-        $('#editFolderInput').focus();
+        $('#newTaskInput').focus();
         $('#addFolderInput').focus();
+        $('#editFolderInput').focus();
+        $('#editTaskInput').focus();
     });
 </script>
 </body>
