@@ -43,6 +43,13 @@ switch ($_POST['action']) {
         $taskTitle = $_POST['taskTitle'];
         updateTask($taskId, $taskTitle);
         break;
+    case 'doneSwitch':
+        $taskId = $_POST['taskId'];
+        if (!isset($taskId) or !is_numeric($taskId)) {
+            diePage('آیدی تسک معتبر نیست!');
+        }
+        doneSwitch($taskId);
+        break;
     default:
         diePage('اکشن نامعتبر!');
 }

@@ -71,3 +71,14 @@ if (isset($_GET['deleteTask']) and is_numeric($_GET['deleteTask'])){
     deleteTask($_GET['deleteTask']);
 }
 /* پایان تابع */
+
+/* تابع تغییر وضعیت یک تسک از انجام شده به انجام نشده و برعکس */
+function doneSwitch($taskId){
+    global $conn;
+    $userId = getCurrentUserId();
+    $sql = "UPDATE tasks SET is_done = 1 - is_done WHERE user_id = :userId AND id = :taskId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([':taskId' => $taskId, ':userId' => $userId]);
+    return $stmt->rowCount();
+}
+/* پایان تابع */

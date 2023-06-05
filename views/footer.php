@@ -84,6 +84,21 @@
             });
         });
 
+        $('.isDone').click(function(e) {
+            var tId = $(this).attr('data-taskId');
+            $.ajax({
+                url: "<?= siteUrl('proccess/ajaxHandler.php') ?>",
+                method: "POST",
+                data: {
+                    action: "doneSwitch",
+                    taskId: tId
+                },
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
+
 
         $('#editFolderInput').focus();
         $('#addFolderInput').focus();
