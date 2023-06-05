@@ -25,8 +25,19 @@ switch ($_POST['action']) {
         $folderName = $_POST['folderName'];
         updateFolder($folderId, $folderName);
         break;
-
-
+    case 'addTask':
+        $folderId = $_POST['folderId'];
+        $taskTitle = $_POST['taskTitle'];
+        if (!isset($folderId) || empty($folderId)) {
+            echo "لطفا یک پوشه انتخاب نمایید!";
+            die();
+        }
+        if (!isset($taskTitle) || strlen($taskTitle) < 3) {
+            echo "نام تسک باید بزرگتر از سه حرف باشد!";
+            die();
+        }
+        addTask($taskTitle, $folderId);
+        break;
     default:
         diePage('اکشن نامعتبر!');
 }

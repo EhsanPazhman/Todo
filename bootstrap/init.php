@@ -17,6 +17,6 @@ try {
 } catch (PDOException $e) {
     diePage('Connection failed: ') . $e->getMessage();
 }
-
-include BASE_PATH . "libs/libs-categories.php";
 include BASE_PATH . "libs/libs-folders.php";
+include BASE_PATH . "libs/libs-tasks.php";
+include BASE_PATH . "libs/libs-categories.php";
