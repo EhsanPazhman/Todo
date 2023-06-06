@@ -1,10 +1,5 @@
 <?php
 
-function getCurrentUserId()
-{
-    return  1;
-}
-
 // تابع گرفتن همه ای پوشه های امروز از دیتابیس
 function getFolders()
 {

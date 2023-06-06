@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ثبت نام کاربر</title>
-    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="<?= siteUrl('assets/css/auth.css') ?>">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
             <div class="panel">
                 <div class="auth-form on" id="login">
                     <div id="form-title">ورود</div>
-                    <form action="#action=login" method="POST">
+                    <form action="<?= siteUrl('auth.php?action=login') ?>" method="POST">
                         <input name="email" type="text" required="required" placeholder="ایمیل" />
                         <input name="password" type="password" required="required" placeholder="رمز عبور" />
                         <button type="Submit">ورود</button>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="auth-form" id="signup">
                     <div id="form-title">ثبت نام</div>
-                    <form action="#?action=register" method="POST">
+                    <form action="<?= siteUrl('auth.php') ?>?action=register" method="POST">
                         <input name="name" type="text" required="required" placeholder="نام کاربری" />
                         <input name="email" type="text" required="required" placeholder="ایمیل" />
                         <input name="password" type="password" required="required" placeholder="رمز عبور" />

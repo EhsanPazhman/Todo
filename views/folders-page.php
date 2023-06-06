@@ -2,7 +2,7 @@
 <?php include "header.php"; ?>
 <!-- partial:index.partial.html -->
 <div class="main">
-    <?php include "sidebar.php"; ?>>
+    <?php include "sidebar.php"; ?>
     <div class="view">
         <div class="viewHeader">
             <div class="title">
