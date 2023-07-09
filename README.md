@@ -102,4 +102,4 @@ My good friend, if you find a bug in the project, you can let me and other frien
 
 ## License
 
-This project is licensed under the terms of the MIT license. © [Ehsan Pejman](https://github.com/EhsanPazhman/Todo)
+This project is licensed under the terms of the MIT license. © [Ehsan Pazhman](https://github.com/EhsanPazhman/Todo)
