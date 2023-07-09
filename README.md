@@ -95,7 +95,7 @@ be successful and victorious.
  2. Your pull requests are all reviewed and accepted if possible.
 
 ## Bugs in the project
-My good friend, if you find a bug in the project, you can let me and other friends know via GitHub. [https://github.com/EhsanPejman/Todo/issues](https://github.com/EhsanPazhman/Todo/issues)
+My good friend, if you find a bug in the project, you can let me and other friends know via GitHub. [https://github.com/EhsanPazhman/Todo/issues](https://github.com/EhsanPazhman/Todo/issues)
 
 ## Contact with me
  - By Email [ehsanpazhman@gmail.com](mailto:ehsanpazhman@gmail.com)
